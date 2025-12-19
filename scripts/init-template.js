@@ -11,10 +11,10 @@
  * Usage: npm run init-template
  */
 
-import { createInterface } from "node:readline";
-import { readFileSync, writeFileSync, existsSync, rmSync } from "node:fs";
 import { execSync } from "node:child_process";
+import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -81,7 +81,7 @@ async function main() {
 
 	// Ask about git reinitialization
 	const reinitGit = await prompt(
-		"Reinitialize git repository (removes history)? (y/N): "
+		"Reinitialize git repository (removes history)? (y/N): ",
 	);
 	const shouldReinitGit =
 		reinitGit.toLowerCase() === "y" || reinitGit.toLowerCase() === "yes";
@@ -172,7 +172,7 @@ async function main() {
 	log("  3. Update tests/utils/constants.ts with your API endpoints");
 	log("  4. Start writing your tests!");
 	log(
-		"\n📖 See TEMPLATE_SETUP.md and PROJECT_CUSTOMIZATION.md for detailed guidance.\n"
+		"\n📖 See TEMPLATE_SETUP.md and PROJECT_CUSTOMIZATION.md for detailed guidance.\n",
 	);
 }
 
