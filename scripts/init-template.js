@@ -75,16 +75,15 @@ async function main() {
 	// Ask about removing example tests
 	log("\n🧹 Cleanup Options\n", colors.blue);
 	const removeExamples = await prompt("Remove example tests? (y/N): ");
-	const shouldRemoveExamples =
-		removeExamples.toLowerCase() === "y" ||
-		removeExamples.toLowerCase() === "yes";
+	const shouldRemoveExamples = ["y", "yes"].includes(
+		removeExamples.toLowerCase(),
+	);
 
 	// Ask about git reinitialization
 	const reinitGit = await prompt(
 		"Reinitialize git repository (removes history)? (y/N): ",
 	);
-	const shouldReinitGit =
-		reinitGit.toLowerCase() === "y" || reinitGit.toLowerCase() === "yes";
+	const shouldReinitGit = ["y", "yes"].includes(reinitGit.toLowerCase());
 
 	// Confirm changes
 	log("\n📋 Summary of Changes:\n", colors.yellow);
@@ -96,7 +95,7 @@ async function main() {
 	log(`  • Reinitialize Git: ${shouldReinitGit ? "Yes" : "No"}`);
 
 	const confirm = await prompt("\nProceed with these changes? (Y/n): ");
-	if (confirm.toLowerCase() === "n" || confirm.toLowerCase() === "no") {
+	if (["n", "no"].includes(confirm.toLowerCase())) {
 		log("\n❌ Initialization cancelled.\n", colors.yellow);
 		process.exit(0);
 	}
