@@ -1,10 +1,21 @@
 {
 	"name": "playwright-template",
-	"version": "1.0.0",
+	"version": "2.0.0",
+	"description": "Reusable Playwright testing framework template for UI and API automation",
 	"main": "index.js",
 	"repository": "https://github.com/acahet/playwright-template.git",
 	"author": "Anderson Cahet",
 	"license": "MIT",
+	"keywords": [
+		"playwright",
+		"testing",
+		"automation",
+		"ui-testing",
+		"api-testing",
+		"template",
+		"typescript",
+		"e2e"
+	],
 	"type": "module",
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.8",
@@ -25,6 +36,7 @@
 		"typescript-eslint": "^8.49.0"
 	},
 	"scripts": {
+		"init-template": "node scripts/init-template.js",
 		"lint": "npx eslint",
 		"code:format": "biome check --write tests",
 		"code:format:check": "biome check tests",

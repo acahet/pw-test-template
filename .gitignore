@@ -1,3 +1,11 @@
+# ==========================================
+# Playwright Template - Git Ignore
+# ==========================================
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
 
 # Playwright
 node_modules/
@@ -6,4 +14,41 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-.env
+
+# Test Results & Reports
+test-results/
+playwright-report/
+coverage/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Operating System
+Thumbs.db
+Desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build & Distribution
+dist/
+build/
+*.tsbuildinfo
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# Optional: Remove these if you want to track them
+package-lock.json  # Remove this line if using npm
+yarn.lock          # Remove this line if using yarn

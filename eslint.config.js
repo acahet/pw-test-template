@@ -10,7 +10,7 @@ export default [
 			globals: globals.node,
 			parserOptions: {
 				projectService: {
-					allowDefaultProject: ["*.js", "*.ts", "*.mjs"],
+					allowDefaultProject: ["*.js", "*.mjs", "eslint.config.js"],
 				},
 				tsconfigRootDir: import.meta.dirname,
 			},
@@ -57,14 +57,16 @@ export default [
 	},
 	{
 		ignores: [
-			"node_modules",
-			"test-results",
-			"tests/report/",
-			"playwright/.cache",
-			".auth",
+			".github/**",
+			".husky/**",
+			"node_modules/**",
+			"test-results/**",
+			"tests/report/**",
+			"playwright/.cache/**",
+			".auth/**",
 			".env",
-			"*-snapshots",
-			"playwright.config.ts",
+			"*-snapshots/**",
+			"scripts/**",
 		],
 	},
 ];
